@@ -673,6 +673,19 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
     }
 
     @ReactMethod
+    public void releaseCamera(ReadableMap options) {
+        Log.i("IGOR", "releaseCamera: " + options.toString());
+
+        RCTCamera instance = RCTCamera.getInstance();
+        if (instance == null) return;
+
+        Camera camera = instance.releaseCameraInstance(options.getInt("type"));
+        if (camera == null) return;
+
+        camera.re
+    }
+
+    @ReactMethod
     public void startPreview(ReadableMap options) {
         Log.i("IGOR", "startPreview");
 
