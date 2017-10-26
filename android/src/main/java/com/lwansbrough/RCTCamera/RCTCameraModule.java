@@ -679,10 +679,7 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
         RCTCamera instance = RCTCamera.getInstance();
         if (instance == null) return;
 
-        Camera camera = instance.releaseCameraInstance(options.getInt("type"));
-        if (camera == null) return;
-
-        camera.re
+        instance.releaseCameraInstance(options.getInt("type"));
     }
 
     @ReactMethod
